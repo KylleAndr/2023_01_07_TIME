@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taimer (ei liigu)</title>
+</head>
+<style>
+    /*  VAJA LISADA TAIMERILE LIIKUMINE */
+    hr,
+    br {
+        margin: 2rem;
+    }
+
+    .tulemus {
+        padding: 32px;
+        border: 2px solid gray;
+        min-width: 300PX;
+        min-height: 300PX;
+        background-color: aquamarine;
+    }
+</style>
+
+<body>
+
+    <div class="tulemus">
+        <H1>kell on praegu: <a id=AegJavastTest> </a> </H1>
+        <H1>Tagasi pead olema kell: <a id=AegTagasi> </a> </H1>
+        <H1>Sul on veel aega jäänud: <a id=Aega_Jaanud> </a> </H1>
+    </div>
+
+    <!-- *****************************************************************************-->
+
+    <script type="text/javascript">
+        //--------ARVUTAB AJAVAHE -----------------------------------
+        // Parameetrina saab kasutada andmeid aasta, kuu, päeva, tundide, minutite, sekundite kohta, mis avaldatakse täisarvudes, näiteks:
+
+
+        // kell praegu 
+        var aegOn = new Date();
+        var tunnid = aegOn.getHours();
+        var minutid = aegOn.getMinutes();
+        //>>>> kell praegu link <<<<<<<<//
+        document.getElementById("AegJavastTest").innerHTML = tunnid + ' : ' + minutid;
+
+        // aeg millal peab olema tagasi
+        var Tagasi = new Date(2023, 0, 07, 18, 00, 00);
+        var TagasiTunnid = Tagasi.getHours();
+        var TagasiMinutid = Tagasi.getMinutes();
+
+        //>>>> aeg millal peab olema tagasi (sisestatud aeg) <<<<<<<<//
+        document.getElementById("AegTagasi").innerHTML = TagasiTunnid + ' : ' + TagasiMinutid;
+
+        // ajavahe arvutus (Taimer)    
+        // -- arvutab ajavahe millisekundites
+        var Taimer = Tagasi - aegOn;
+
+        //--- konventeerib tulemuse normaalseks kellaajaks
+        var T_days = Math.floor(Taimer / (1000 * 60 * 60 * 24));
+        var T_hours = Math.floor((Taimer % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var T_minutes = Math.floor((Taimer % (1000 * 60 * 60)) / (1000 * 60));
+        var T_seconds = Math.floor((Taimer % (1000 * 60)) / 1000);
+
+        //>>>> kell praegu link <<<<<<<<//
+        document.getElementById("Aega_Jaanud").innerHTML = T_hours + ":" + T_minutes;
+
+    </script>
+</body>
+
+</html>
