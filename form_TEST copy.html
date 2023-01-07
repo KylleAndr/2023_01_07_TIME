@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <title>Vormid</title> 
+ 
+</head>
+<body>
+  <h2>Vormid</h2>
+  
+
+
+  <form action="#">
+   Sinul on aega: <input type="number" id="Sisestatud_Aeg" name="appt">
+   <input type="submit" value="vali" onclick="VabaAeg()"/>
+  </form>
+  <div id="ValjastaAeg">Sisestatud aeg oli...</div>
+
+  
+
+ 
+  <script type="text/javascript">
+     
+
+
+    function VabaAeg(){    
+      document.getElementById("ValjastaAeg").innerHTML= document.getElementById("Sisestatud_Aeg").value;
+    }
+
+
+  </script>
+</body>
+</html>

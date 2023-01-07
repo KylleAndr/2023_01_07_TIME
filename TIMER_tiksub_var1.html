@@ -27,11 +27,10 @@ hr,
         <H1>kell on praegu: <a id=AegPraegu> </a> </H1>
         <H1>Tagasi pead olema kell: <a id=AegTagasi> </a> </H1>
         <H1>Sul on veel aega jäänud: <a id=Aega_Jaanud> </a> </H1>
+        <H1 style="color:red;"> <a id=AegOnLabi> </a> </H1>
     </div>
 
-<p> PALJU AEGA ON JÄRGI JÄÄNUD </p>
-<p id="TAIMER"></p>
-<P ID="demo"></P>
+
 
 <script>
 // trykib praeguse aja, aga see ei osale arvutuses
@@ -44,8 +43,20 @@ var aegOn = new Date();
 
 
 // SISESTATUD AEG
-var countDownDate = new Date("Jan 7, 2023 17:45:25").getTime();
+var countDownDate = new Date("Jan 8, 2023 17:45:25").getTime();
 
+  // KONVENTEERIB
+  var IN_days = Math.floor(countDownDate/ (1000 * 60 * 60 * 24));
+  var IN_hours = Math.floor((countDownDate % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var IN_minutes = Math.floor((countDownDate % (1000 * 60 * 60)) / (1000 * 60));
+  var IN_seconds = Math.floor((countDownDate % (1000 * 60)) / 1000);
+
+
+
+
+//document.getElementById("AegTagasi").innerHTML = countDownDate;
+document.getElementById("AegTagasi").innerHTML = IN_hours + ":"
+  + IN_minutes + ":" + IN_seconds;
 
 // UPDATE FUNKTSIOON (iga sekundi järel)
 var x = setInterval(function() {
@@ -64,13 +75,13 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
   // Output the result in an element with id="demo"
-  document.getElementById("TAIMER").innerHTML = hours + ":"
+  document.getElementById("Aega_Jaanud").innerHTML = hours + ":"
   + minutes + ":" + seconds;
     
   // If the count down is over, write some text 
   if (distance < 0) {
     //clearInterval(x);
-    document.getElementById("demo").innerHTML = "AEG ON LÄBI";
+    document.getElementById("AegOnLabi").innerHTML = "AEG ON LÄBI";
   }
 }, 1000);
 </script>

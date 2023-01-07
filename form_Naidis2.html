@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <title>Vormid</title> 
+ 
+</head>
+<body>
+  <h2>Vormid</h2>
+  <form action="#">
+    Eesnimi: <input type="text" id="enimi"  /><br />
+   
+
+    <input type="submit" value="Saada" onclick="tervitus()"/>
+  </form>
+
+
+  <div id="vastusekiht">Siia tuleb vastus...</div>
+ 
+
+
+  <script type="text/javascript">
+  
+    function tervitus(){    
+      document.getElementById("vastusekiht").innerHTML="Tere "+ 
+      document.getElementById("enimi").value+
+      " "+
+      "!"
+      ;
+    }
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <title>sisesta aeg ja väljastab selle</title>  
+</head>
+<style> input {padding: 8px; margin: 8px;}</style>
+<body>
+  <h2>Vormid</h2>
+  <form action="#">
+   Vaba aega on <input type="time" id="VabaAeg"  /><br />
+    <input type="submit" value="-- Saada --" onclick="tervitus()"/>
+  </form>
+
+  <div id="Valjasta_Sisestatud_Aeg">Siia tuleb vastus...</div>
+  <hr>
+  <h1 id="summa"></h1>
+
+  <script type="text/javascript">  
+    function tervitus(){    
+      document.getElementById("Valjasta_Sisestatud_Aeg").innerHTML="Sisestasid: "+ 
+      document.getElementById("VabaAeg").value;
+    }
+
+var AjaVahe = document.getElementById("VabaAeg").value + Date.now();
+document.getElementById("summag").innerHTML= AjaVahe;
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+sisestatud kell - kell praegu(tiksub)
+
+(kell praegu + input tunnid)  -  kell praegu 
+ei tiksu       ei tiksu          tiksub
+
+
+----------
+
+sisestab tunnid
+väljastab  00:00 left
