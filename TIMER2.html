@@ -7,23 +7,52 @@ p {
   font-size: 20px;
   margin: 50px;
 }
+hr,
+    br {
+        margin: 2rem;
+    }
+
+    .tulemus {
+        padding: 32px;
+        border: 2px solid gray;
+        min-width: 300PX;
+        min-height: 300PX;
+        background-color: aquamarine;
+    }
 </style>
 </head>
 <body>
+
+    <div class="tulemus">
+        <H1>kell on praegu: <a id=AegPraegu> </a> </H1>
+        <H1>Tagasi pead olema kell: <a id=AegTagasi> </a> </H1>
+        <H1>Sul on veel aega jäänud: <a id=Aega_Jaanud> </a> </H1>
+    </div>
 
 <p> PALJU AEGA ON JÄRGI JÄÄNUD </p>
 <p id="TAIMER"></p>
 <P ID="demo"></P>
 
 <script>
+// trykib praeguse aja, aga see ei osale arvutuses
+var aegOn = new Date();
+        var tunnid = aegOn.getHours();
+        var minutid = aegOn.getMinutes();
+        //>>>> kell praegu link <<<<<<<<//
+        document.getElementById("AegPraegu").innerHTML = tunnid + ' : ' + minutid;
+
+
+
 // SISESTATUD AEG
 var countDownDate = new Date("Jan 7, 2023 17:45:25").getTime();
+
 
 // UPDATE FUNKTSIOON (iga sekundi järel)
 var x = setInterval(function() {
 
   // AEG PRAEGU
   var now = new Date().getTime();
+    
     
   // ARVUTAB VAHE
   var distance = countDownDate - now;
@@ -36,7 +65,7 @@ var x = setInterval(function() {
     
   // Output the result in an element with id="demo"
   document.getElementById("TAIMER").innerHTML = hours + ":"
-  + minutes + ":" + seconds + ":";
+  + minutes + ":" + seconds;
     
   // If the count down is over, write some text 
   if (distance < 0) {
