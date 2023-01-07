@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Sisesta kellaaeg</h3>
+<input type="time" id="myTime" value="22:15:00">
+<button onclick="myFunction()">sisesta kellaaeg</button>
+<p>Sisestasid aja: <a id="demo"></a> </p>
+
+
+
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTime").value;
+  document.getElementById("demo").innerHTML = x;}
+</script>
+
+</body>
+</html>

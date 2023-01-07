@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metshein</title>
+</head>
+<style> hr, br {margin: 2rem;}; </style>
+<body>
+    <script type="text/javascript">
+    //----1 GLOBAALNE KELL ---------------------------------    
+        var aastapaev = new Date();
+        document.write('<hr><p> globaalne kell: </p>'+aastapaev);
+
+   //-----2 SISESTATUD KUUPÄEV -------------------------------------
+        var synnipaev = new Date("November 6, 2015");
+  var paev = synnipaev.getDay();
+  var paevKorrig = paev +1; //kuna jaga hakkab 0-st, siis õige nr väljastamiseks tuleb liita 1
+  document.write('<hr><p> sisestatud kuupäevast trükib päeva: </p>'+ paevKorrig);
+
+    //-----3 KELL PRAEGU --------------------------------------
+    var aeg = new Date();
+var tund = aeg.getHours();
+var minut = aeg.getMinutes();
+document.write('<hr><p> praegu on kell:  </p> '+tund+' : '+minut);
+
+
+    //--------4 ARVUTAB AJAVAHE -----------------------------------
+    // Parameetrina saab kasutada andmeid aasta, kuu, päeva, tundide, minutite, sekundite kohta, mis avaldatakse täisarvudes, näiteks:
+    document.write('<hr><p> AJAVAHE:   </p> ' );
+
+    // kell praegu 
+var aegOn = new Date();
+var tunnid = aegOn.getHours();
+var minutid = aegOn.getMinutes();
+document.write('<b>  kell on praegu:  </b> '+tunnid+' : '+minutid+'<br>');
+
+// aeg millal peab olema tagasi (aeg pikalt)
+     /* var TagasiPikk = new Date(2023, 0, 07, 10, 00, 00);
+     document.write('<b> tagasi peab olema kell (sisestatud kellaaeg pikalt):   </b>'+TagasiPikk+'<br>');*/
+
+
+     // aeg millal peab olema tagasi
+var Tagasi = new Date(2023, 0, 07, 12, 00, 00);
+var TagasiTunnid = Tagasi.getHours();
+var TagasiMinutid = Tagasi.getMinutes();
+document.write('<b>Aeg millal peab olema tagasi:  </b> '+TagasiTunnid +' : '+TagasiMinutid+'<br>');
+
+
+// ajavahe arvutus (Taimer)
+
+var Taimer = Tagasi-aegOn;
+document.write (Taimer);
+document.write('<hr>');
+//---------
+var T_days = Math.floor(Taimer / (1000 * 60 * 60 * 24));
+  var T_hours = Math.floor((Taimer % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var T_minutes = Math.floor((Taimer % (1000 * 60 * 60)) / (1000 * 60));
+  var T_seconds = Math.floor((Taimer % (1000 * 60)) / 1000);
+
+
+
+  document.write( "<h1> aega on jäänud:___" + T_hours + ":"  + T_minutes+ '</h2>');
+
+/*var TaimerTunnid = Taimer.getHours();
+var TaimerMinutid = Taimer.getMinutes();
+document.write('<b>Aeg millal peab olema tagasi:  </b> '+TaimerTunnid +' : '+TaimerMinutid+'<br>');    */
+
+
+
+
+
+
+//document.write('<b> tagasi peab olema kell (sisestatud kellaaeg pikalt):   </b>'+Tagasi+'<br>');
+var AegaJaanud = new Date (aastapaev2 - aastapaev);
+//document.write(AegaJaanud );
+
+</script>
+
+
+</body>
+</html>

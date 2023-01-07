@@ -1,0 +1,35 @@
+<html>
+<head>
+  <title>Kellaajad</title>
+</head>
+<body>
+<script type="text/javascript">
+Date.prototype.getTimeString = function(kell)
+{
+  var str = '';
+  var hrs = this.getHours();
+  if (kell == 12)
+  {
+    var meridian = hrs < 12 ? 'EL' : 'PL';
+    hrs = hrs % 12;
+    if (hrs == 0) { hrs = 12; }
+    str += hrs;
+  }
+  else
+  {
+    str += (hrs < 10 ? '0' : '') + hrs;
+  }
+  str += ':';
+  var mins = this.getMinutes();
+  str += (mins < 10 ? '0' : '') + mins;
+    if (kell == 12) { str += meridian; }
+  return str;
+};
+var today = new Date();
+var now12 = today.getTimeString(12);
+var now24 = today.getTimeString(24);
+document.write('12-tunnine: ' + now12+'<br />');
+document.write('24-tunnine: ' + now24);
+</script>
+</body>
+</html>

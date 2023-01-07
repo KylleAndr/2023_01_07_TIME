@@ -1,0 +1,18 @@
+TIME INPUT LINK: https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_input_time_get
+
+
+Timer
+
+
+sisestab mitu tundi on vaba aega
+
+äpp  näitab palju aega on järgi jäänud
+
+----------------------
+
+praegu on kell: 10:00  (date now)
+tagasi peab olema kell: INPUT 12:00
+
+sul on jäänud aega: input - now    (näites 12:00  - 10:00)
+
+

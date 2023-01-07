@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+ <style>
+    * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+section{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ </style>   
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <DIV class="container">
+            <h1>00:00</h1>
+        </DIV>
+    </section>
+    <script>
+    
+    const timeH = document.querySelector('h1');
+let timeSecond = 150;
+timeH.innerHTML = `00:${timeSecond}`;
+const countDown = setInterval (()=> {
+    timeSecond--;
+displayTime(timeSecond);   
+    if(timeSecond <= 0 || timeSecond < 1) {
+        clearInterval(countDown);
+    }
+},1000)
+
+function displayTime(second){
+    const min = Math.floor(second  /60);
+    const sec = Math.floor(second % 60);
+    timeH.innerHTML=`${min<10 ? '0': ''}${min}:${sec}`
+}
+        
+        </script>
+</body>
+</html>

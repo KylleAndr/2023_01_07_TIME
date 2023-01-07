@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        p {font-size: 24px;}
+</style>        
+
+<body>
+
+    <!------- INPUT  aeg -->
+    <h3>Sisesta kellaaeg</h3>
+    <input type="time" id="InputTime" value="22:15:00">
+    <button onclick="myFunction()">sisesta kellaaeg</button>
+    <!--OUTPUT aeg-->
+    <p>Sisestasid aja: <a id="ShowInputTime"></a> </p>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("InputTime").value;
+            document.getElementById("ShowInputTime").innerHTML = x;
+        };
+    </script>
+
+<hr style="height: 2px; margin: 10px;">
+    <!------- praegune aeg -->
+      <h2>Praegune aeg: </h2>
+    <p id="TimeNow_1"></p>
+
+    <script>
+        const d = new Date();
+        document.getElementById("TimeNow_1").innerHTML = d;
+    </script>
+
+<hr style="height: 2px; margin: 20px;"> 
+<!-------------TIMER count down ------------------->
+
+<H1> PALJU AEGA ON JÄRGI JÄÄNUD </H1>
+
+<p id="TAIMER"></p>
+
+<script>
+// Set aeg
+//-- var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
+
+var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
+
+
+// update iga sekundi järel
+var x = setInterval(function() {
+
+  // tänane aeg
+  var now = new Date().getTime();
+    
+  //arvutab distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // arvutab  days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // väljastab  id="demo"
+  document.getElementById("TAIMER").innerHTML =  hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+
+
+
+</body>
+
+</html>
