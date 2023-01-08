@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+    //button
+let button = document.getElementById('btn');
+button.addEventListener('click', timer);
+
+//Seconds variable
+let seconds = 60;
+
+function timer(){
+    let mins = parseInt(document.getElementById('min').value);
+
+    //Make the seconds tick down from 60
+    for(let i= seconds - 1; i >= 0; i--){
+        setInterval(function(){
+            seconds[i]}, 1000);
+        console.log(seconds[i]);
+    }
+    if(mins === 0 && seconds == 0){
+        console.log('completed')
+
+    }else{
+        console.log('still going');
+    }
+
+    //output the time.
+    let time= document.getElementById('time');
+    
+};
+    </script>
+</body>
+</html>

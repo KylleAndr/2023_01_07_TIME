@@ -1,28 +1,83 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-  <title>sisesta aeg ja väljastab selle</title>  
+  <title>sisesta aeg ja väljastab selle; YTITAN LISADA ARVUTUST</title>  
 </head>
-<style> input {padding: 8px; margin: 8px;}</style>
+<style> input {padding: 8px; margin: 8px; HR {padding: 15PX;}}</style>
 <body>
-  <h2>Vormid</h2>
-  <form action="#">
-   Vaba aega on <input type="time" id="VabaAeg"  /><br />
-    <input type="submit" value="-- Saada --" onclick="tervitus()"/>
-  </form>
 
-  <div id="Valjasta_Sisestatud_Aeg">Siia tuleb vastus...</div>
-  <hr>
-  <h1 id="summa"></h1>
+<!-- AJA SISES - VÄLJASTUS VORM-->
+
+  <form action="#">
+       Vaba aega on <input type="time" id="VabaAeg"  /><br />
+       <input type="submit" value="-- Saada --" onclick="tervitus()"/>
+  </form>
+  <div id="Valjasta_Sisestatud_Aeg">ESIMENE INPUT TIME</div>
+  <HR>
+
+ <!-- ARVUTUS date now + suvaline nr --> 
+<!-- <p id="CALC-TEST"> VÄLJASTAB ARUVTAMISE TESTI</p>
+ <HR> -->
+ <!------------------->
+
+  <!-- ARVUTUS2 --> 
+
+  <form action="#">
+    Vaba aega on <input type="time" id="VabaAeg2"  /><br />
+    <input type="submit" value="-- Saada --" onclick="ARVUTUS()"/>
+</form>
+
+  <p id="CALC-TEST2_valjastus"></p>
+  <HR>
+  <!------------------->
+
 
   <script type="text/javascript">  
+  ///**********************************************///
     function tervitus(){    
       document.getElementById("Valjasta_Sisestatud_Aeg").innerHTML="Sisestasid: "+ 
       document.getElementById("VabaAeg").value;
     }
 
-var AjaVahe = document.getElementById("VabaAeg").value + Date.now();
-document.getElementById("summag").innerHTML= AjaVahe;
+//-- ARVUTAMISE TEST
+/* let SUMMA = Math.round( 100 -  Date.now());
+document.getElementById("CALC-TEST").innerHTML = SUMMA; 
+
+
+//-- SISESTATUD NUMBRIGA ARVUTAMISE TEST
+//let SUMMA2 = Math.round( 100 -  Date.now());
+//document.getElementById("CALC-TEST2").innerHTML = SUMMA2;
+
+//------------------------------------------------------------------------
+
+// aeg praegu ja väljastab selle
+let NOW = Date.now();
+document.write("<h2><a>aeg praegu (date nov) </a> <br>" + NOW + "</h2>");
+//liidab mingi numbri
+let TERMIN = NOW + 555555;
+document.write("<h2><i>uus aeg:</i> <br>" + TERMIN + "</h2>");
+
+// liidab Date Now ajale sisestatud kellaaja
+let AEG_TAGASI = NOW + 999999996987455;
+document.write("<h2><i>uus aeg:</i> <br>" + AEG_TAGASI + "</h2>");
+
+
+//-----------------------------------------------------------------
+
+// TÖÖTAB, arhiveerin enne mudimist
+/* ----  function ARVUTUS(){    
+      document.getElementById("CALC-TEST2_valjastus").innerHTML="Sisestasid: "+ 
+      document.getElementById("VabaAeg2").value;
+    }
+-------*/
+
+// arvutab aja millal peab olema tagasi
+function ARVUTUS(){    
+      document.getElementById("CALC-TEST2_valjastus").innerHTML="kUS ON "+ 
+      document.getElementById("VabaAeg2").value;
+    }
+
+
 
   </script>
 </body>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>   <title>sisesta aeg ja väljastab selle; YTITAN LISADA ARVUTUST</title>  
+</head> <style> input {padding: 8px; margin: 8px; HR {padding: 15PX;}}</style>
+<body> 
+
+
+<!-- VORM-->
+<!-- <form action="#">
+       Vaba aega on <input type="time" id="VabaAeg"  /><br />
+       <input type="submit" value="-- Saada --" onclick="FUNKTSIOON_SISESTA()"/>
+  </form>
+  <div id="Valjasta_Sisestatud_Aeg">ESIMENE INPUT TIME</div>
+  <HR> -->
+
+
+  <!-- ARVUTUS --> 
+  <form action="#">
+    Vaba aega on <input type="time" id="SISESTATUD_AEG"  /><br />
+    <input type="submit" value="-- Saada --" onclick="ARVUTUS()"/>
+</form>
+
+  <p id="CALC-TEST2_valjastus"></p>
+  <HR>
+  <!------------------->
+
+
+  <script type="text/javascript">  
+  ///**********************************************///
+ /*   function FUNKTSIOON_SISESTA(){
+      document.getElementById("Valjasta_Sisestatud_Aeg").innerHTML="Sisestasid: "+ 
+      document.getElementById("VabaAeg").value;
+    }*/
+
+
+// arvutab aja millal peab olema tagasi
+function ARVUTUS(){  
+    
+
+  var InputTEST = document.getElementById("SISESTATUD_AEG");
+
+      let SUMMA = Math.round( InputTEST + Date.now()); // liidag praegusele ajale 100 
+
+     
+   
+      document.getElementById("CALC-TEST2_valjastus").innerHTML="sisestasid aja "+  //väljastab input aja
+      document.getElementById("SISESTATUD_AEG").value+
+      "<br>aegade summa" + SUMMA // väljastab aeg praegu + 100
+       
+      
+      ;
+      //document.write("Hello World!");
+
+      // kuidas võtta input number ja sellega aruvtada?
+
+
+    }
+  </script>
+</body>
+</html>
